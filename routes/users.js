@@ -1,6 +1,10 @@
 var express = require('express');
 var router = express.Router();
 const { ensureAuthenticated } = require('../config/auth');
+var User = require('../models/User');
+const bcrypt = require('bcryptjs');
+const mail = require('../config/mail');
+const passport = require('passport');
 
 router.get('/register', (req, res, next) => {
     if(req.user)
@@ -17,11 +21,12 @@ router.get('/login', (req, res, next) => {
 });
   
 router.post('/register', (req, res, next) => {
-    const { fullname, username, email, phone, password, configpassword } = req.body;
+    const { firstName, lastName, address, phone, school, idNumber, password, configpassword } = req.body;
     const role = 'user', card = 0;
+    const ipAddress = req.connection.remoteAddress;
     let errors = [];
     /// check required
-    if(!fullname || !username || !email || !phone || !password || !configpassword){
+    if(!firstName || !lastName || !address || !phone || !school || !idNumber || !password || !configpassword){
         errors.push({msg: 'لطفا موارد خواسته شده را کامل کنید!'});
     }
     /// check password match
@@ -34,19 +39,20 @@ router.post('/register', (req, res, next) => {
     }
     ///////////send evreything 
     if(errors.length > 0 ){
-        res.render('register', { fullname, username, email, phone, password, configpassword, errors});
+        res.render('register', { firstName, lastName, address, phone, school, idNumber, errors});
     }
     else{
+        const fullname = firstName + lastName;
         // validation passed
-        User.findOne({ username: username})
+        User.findOne({ idNumber: idNumber})
             .then(user =>{
             if(user){
                 // user exist
-                errors.push({msg: 'از این آدرس ایمیل یان نام کاربری قبلا استفاده شده!'});
-                res.render('register', { fullname, username, email, phone, password, configpassword });
+                errors.push({msg: 'کد ملی قبلا ثبت شده است.'});
+                res.render('register', { firstName, lastName, address, phone, school, idNumber, errors });
             }
             else {
-                const newUser = new User({username, email, phone, fullname, password, role});
+                const newUser = new User({ipAddress, fullname, firstName, lastName, address, phone, school, idNumber, password, role, card});
                 // Hash password
                 bcrypt.genSalt(10, (err, salt) => bcrypt.hash(newUser.password, salt, (err, hash) => {
                 if(err) throw err;

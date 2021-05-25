@@ -16,8 +16,8 @@ block content
                 -}
             -}
             -if(success_msg != ''){
-                .error(id='error3')
-                    i.fa.fa-warning
+                .error.green-error(id='error3')
+                    i.fa.fa-check
                     h1= success_msg
                     i.fa.fa-times.close-error
                     .time-interval(id='time3')
@@ -53,4 +53,4 @@ block content
             .text-input-area
                 button.submit(type="submit") ورود
             a.link(href="/users/register") هنوز ثبت نام نکرده اید؟
-    script(src="/javascripts/register.js")
+    script(src="/js/users.js")

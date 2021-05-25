@@ -92,6 +92,16 @@
         padding: 0.7vw 1vw;
         padding-bottom: 0;
     }
+    .errors-area .error.green-error{
+        background-color: rgba(1, 170, 9, 0.842);
+        position: relative;
+        margin: 1vw;
+        border-radius: 1vw;
+        color: white;
+        padding: 0.7vw 1vw;
+        padding-bottom: 0;
+    }
+    
     .errors-area .error h1{
         display: inline-block;
         padding-right: 0;
