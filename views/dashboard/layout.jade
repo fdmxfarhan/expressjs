@@ -18,7 +18,7 @@ html
                     img(src="/img/avatar/1.png", alt="avatar")
                 .name= user.fullname
                 .nav-links 
-                    a.sidebar-nav-link(href="#") 
+                    a.sidebar-nav-link(href="/dashboard") 
                         i.fa.fa-user 
                         | داشبورد
                     .break 
@@ -28,21 +28,19 @@ html
                     .break 
                     a.sidebar-nav-link(href="#") 
                         i.fa.fa-credit-card
-                        | داشبورد
+                        | صورت حساب ها
                     .break 
                     a.sidebar-nav-link(href="#") 
                         i.fa.fa-bell
-                        | داشبورد
+                        | اعلان ها
                     .break 
-                
-                .setting
-                    a(href="#") 
+                    a.sidebar-nav-link(href="#") 
                         i.fa.fa-gears
                         | تنظیمات
-                .logout
-                    a(href="#") 
-                        i.fa.fa-power-off
-                        | خروج
+                
+                a.logout(href="/users/logout") 
+                    i.fa.fa-power-off
+                    | خروج
 
             .content-area
                 block content

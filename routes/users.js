@@ -42,7 +42,7 @@ router.post('/register', (req, res, next) => {
         res.render('register', { firstName, lastName, address, phone, school, idNumber, errors});
     }
     else{
-        const fullname = firstName + lastName;
+        const fullname = firstName + ' ' + lastName;
         // validation passed
         User.findOne({ idNumber: idNumber})
             .then(user =>{
