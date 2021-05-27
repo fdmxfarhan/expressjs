@@ -94,6 +94,26 @@
         font-weight: bold;
         color: rgb(0, 190, 0);
     }
+    .product-cards-area .card.add{
+        background-color: rgb(255, 192, 185);
+        text-align: center;
+        cursor: pointer;
+        transition-duration: 500ms;
+    }
+    .product-cards-area .card.add:hover{
+        background-color: salmon;
+    }
+    .product-cards-area .card.add i.plus{
+        color: white;
+        margin: 6vw auto;
+        margin-bottom: 0;
+        font-size: 10vw;
+    }
+    .product-cards-area .card.add .add-text{
+        color: white;
+        font-size: 2vw;
+        margin: 0;
+    }
 }
 @media only screen and (max-width: 800px) {
     

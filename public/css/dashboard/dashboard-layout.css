@@ -38,6 +38,17 @@ body{
     direction: rtl;
     background-color: white;
 }
+
+.black-modal{
+    /* display: none; */
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}
 .transparent-modal{
     display: none;
     position: absolute;
@@ -149,13 +160,45 @@ body{
     .dashboard .content-area .message-area i.close-success-msg:hover, .dashboard .content-area .message-area i.close-notif-msg:hover{
         color: var(--red);
     }
+    .popup-area{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 11;
+    }
+    .popup-area .popup{
+        background-color: white;
+        width: 75%;
+        margin: 5vw auto;
+        border-radius: 1vw;
+        position: relative;
+        padding: 2vw;
+    }
+    .popup-area .popup .close-popup{
+        position: absolute;
+        top: 1.5vw;
+        left: 2vw;
+        font-size: 1.3vw;
+        cursor: pointer;
+    }
+    .popup-area .popup .close-popup:hover{
+        color: var(--red);
+    }
+    .popup-area .popup h1.popup-title{
+        margin: 0;
+        font-family: 'iransans';
+        font-size: 1.3vw;
+        color: var(--blue);
+        border-bottom: var(--blue) 0.1vw solid;
+        width: 50%;
+        margin: auto;
+        text-align: center;
+        margin-bottom: 1vw;
+    }
 }
 
 @media only screen and (max-width: 800px) {
     
 }
-
-
-
-
-
