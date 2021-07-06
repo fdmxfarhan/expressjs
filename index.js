@@ -20,7 +20,7 @@ var dashboardRoute = require('./routes/dashboard');
 
 
 // Mongo DB connect
-mongoose.connect('mongodb://localhost/register', {useNewUrlParser: true, useUnifiedTopology: true}, (err) =>{
+mongoose.connect('mongodb://localhost/sibche', {useNewUrlParser: true, useUnifiedTopology: true}, (err) =>{
     if(err) throw err;
     else console.log('Database connected :)');
 });

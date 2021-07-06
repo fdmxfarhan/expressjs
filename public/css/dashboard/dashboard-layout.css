@@ -21,7 +21,7 @@
     --background: #ececec;
     --brown: #3e2917;
     --blue: #1971e4;
-    --yellow: #febf18;
+    --sibche: #3eade0;
     --hover: #8305be;
     --dark: #050507;
     --light: white;
@@ -40,7 +40,7 @@ body{
 }
 
 .black-modal{
-    /* display: none; */
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
@@ -66,7 +66,7 @@ body{
 
 @media only screen and (min-width: 800px) {
     .dashboard .side-bar{
-        background-color: var(--yellow);
+        background-color: var(--sibche);
         position: fixed;
         height: 100%;
         margin: 0;
@@ -106,7 +106,7 @@ body{
     }
     .dashboard .side-bar .nav-links a.sidebar-nav-link:hover{
         color: white;
-        background-color: #ffd258;
+        background-color: #aee5ff;
     }
     .dashboard .side-bar i{
         padding-left: 1vw;

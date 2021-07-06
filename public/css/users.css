@@ -127,6 +127,14 @@
         height: 0.3vw;
         margin-top: 0.5vw;
     }
+    .sibche{
+        width: 6%;
+        margin: 1vw auto;
+    }
+    .sibche img{
+        width: 100%;
+    }
+    
 }
 
 @media only screen and (max-width: 800px) {
@@ -246,6 +254,13 @@
         width: 0;
         height: 1vw;
         margin-top: 0.5vw;
+    }
+    .sibche{
+        width: 10%;
+        margin: 3vw auto;
+    }
+    .sibche img{
+        width: 100%;
     }
 }
 

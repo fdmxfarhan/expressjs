@@ -1,3 +1,6 @@
+.green{color: rgb(0, 252, 0);}
+.red{color: red;}
+
 @media only screen and (min-width: 800px) {
     .graph-cards-area{
         overflow: hidden;
@@ -33,6 +36,9 @@
         color: var(--blue);
         border-bottom: lightgray 0.1vw solid;
         padding: 0.3vw 0;
+        text-align: center;
+        margin-top: 1vw;
+        margin-bottom: 1vw;
     }
     .product-cards-area{
         width: 85%;
@@ -114,6 +120,47 @@
         font-size: 2vw;
         margin: 0;
     }
+    .commute-area{
+        width: 90%;
+        margin: auto;
+    }
+    .day-view{
+        background-color: lightblue;
+        color: rgb(66, 66, 66);
+        margin-bottom: 0.5vw;
+        padding: 0.5vw 1vw;
+        border-radius: 1vw;
+        transition-duration: 500ms;
+        cursor: pointer;
+        position: relative;
+    }
+    .day-view:hover{background-color: salmon;}
+    .day-view i.chev{
+        position: absolute;
+        font-size: 1vw;
+        color: white;
+        left: 2vw;
+        top: 1vw;
+    }
+    .commute{
+        display: none;
+    }
+    .commute-area table{
+        width: 90%;
+        margin: auto;
+        text-align: center;
+    }
+    .commute-area table th{
+        font-size: 1.1vw;
+        color: rgb(34, 34, 34);
+    }
+    .commute-area table td{
+        border-top: rgb(196, 196, 196) 0.1vw solid;
+        padding: 0.3vw 0;
+    }
+    
+
+
 }
 @media only screen and (max-width: 800px) {
     

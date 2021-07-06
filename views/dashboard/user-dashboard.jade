@@ -10,79 +10,41 @@ block content
             .success-msg
                 i.fa.fa-times.close-success-msg
                 ul 
-                    li به پنل کاربری خود خوش آمدید
+                    -if(anarestani)
+                        li انارستانی عزیز به پنل کاربری خود خوش آمدید
+                    -else
+                        li به پنل کاربری خود خوش آمدید
+                    
         -}
-        -if(false){
-            .notif-msg
-                i.fa.fa-times.close-notif-msg
-                ul 
-                    li شما n صورت حساب پرداخت نشده دارید. جهت پرداخت صورت حساب خود 
-                        a(href="#") اینجا 
-                        | را کلیک کنید.
+    h1.title تردد ماه #{get_persian_month(now.month)}
+    .commute-area
+        -for(var i=0; i<thisMonth.length; i++){
+            .day-view(id="day#{i}") #{day_in_week(thisMonth[i].date)} #{thisMonth[i].day} #{get_persian_month(thisMonth[i].month)} ماه
+                i.fa.fa-chevron-down.chev
+            .commute(id="commute#{i}")
+                table
+                    tr 
+                        th شماره دستگاه ورود
+                        th شماره دستگاه خروج
+                        th زمان ورود
+                        th زمان خروج
+                        th وضعیت
+                    tr 
+                        td 1
+                        td 2
+                        td 13:45
+                        td 14:00
+                        td 
+                            .green صحیح
+                    tr 
+                        td 1
+                        td 
+                            .red -
+                        td 13:45
+                        td 
+                            .red -
+                        td 
+                            .red ناقص
+                    
         -}
-
-    .graph-cards-area
-        .card 
-            .title تعداد دوره ها
-            //- .number 100
-            .progress-circle.over50.p85
-                span 100
-                .left-half-clipper
-                    .first50-bar
-                    .value-bar
-        .card 
-            .title تعداد شرکت کنندگان
-            //- .number 200
-            .progress-circle.over50.p85
-                span 200
-                .left-half-clipper
-                    .first50-bar
-                    .value-bar
-        .card 
-            .title تعداد دوره ها
-            //- .number 100
-            .progress-circle.over50.p85
-                span 100
-                .left-half-clipper
-                    .first50-bar
-                    .value-bar
-        
-    h1.title دوره های من
-    .product-cards-area
-        .not-found شما هیچ دوره ای ثبت نام نکرده اید. برای ثبت نام 
-            a(href="#") اینجا 
-            | کلیک کنید.
-    h1.title دوره های پیشنهادی برای شما
-    .product-cards-area
-        //- .not-found شما هیچ دوره ای ثبت نام نکرده اید. برای ثبت نام 
-        //-     a(href="#") اینجا 
-        //-     | کلیک کنید.
-        .card 
-            .image 
-                img(src="/img/classes/img-01.jpg")
-            .title دوره آموزشی 1
-            .text 
-                | در این قسمت توضیحات مورد نیاز در مورد دوره آموزشی نوشته می شود. با کلیک بر روی دکمه ثبت نام این دوره به لیست دوره ها اضافه شده و پس از پرداخت هزینه فعال می شود.
-            .price 100.000 تومان
-        .card 
-            .image 
-                img(src="/img/classes/img-02.png")
-            .title دوره آموزشی 1
-            .text 
-                | در این قسمت توضیحات مورد نیاز در مورد دوره آموزشی نوشته می شود. با کلیک بر روی دکمه ثبت نام این دوره به لیست دوره ها اضافه شده و پس از پرداخت هزینه فعال می شود.
-            .price 100.000 تومان
-        .card 
-            .image 
-                img(src="/img/classes/img-01.jpg")
-            .title دوره آموزشی 1
-            .text 
-                | در این قسمت توضیحات مورد نیاز در مورد دوره آموزشی نوشته می شود. با کلیک بر روی دکمه ثبت نام این دوره به لیست دوره ها اضافه شده و پس از پرداخت هزینه فعال می شود.
-            .price 100.000 تومان
-        .card 
-            .image 
-                img(src="/img/classes/img-02.png")
-            .title دوره آموزشی 1
-            .text 
-                | در این قسمت توضیحات مورد نیاز در مورد دوره آموزشی نوشته می شود. با کلیک بر روی دکمه ثبت نام این دوره به لیست دوره ها اضافه شده و پس از پرداخت هزینه فعال می شود.
-            .price 100.000 تومان
     script(src="/js/dashboard.js") 

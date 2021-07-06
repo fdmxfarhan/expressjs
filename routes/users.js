@@ -21,12 +21,12 @@ router.get('/login', (req, res, next) => {
 });
   
 router.post('/register', (req, res, next) => {
-    const { firstName, lastName, address, phone, school, idNumber, password, configpassword } = req.body;
+    const { firstName, lastName, phone, idNumber, password, configpassword } = req.body;
     const role = 'user', card = 0;
     const ipAddress = req.connection.remoteAddress;
     let errors = [];
     /// check required
-    if(!firstName || !lastName || !address || !phone || !school || !idNumber || !password || !configpassword){
+    if(!firstName || !lastName || !phone || !idNumber || !password || !configpassword){
         errors.push({msg: 'لطفا موارد خواسته شده را کامل کنید!'});
     }
     /// check password match
@@ -39,7 +39,7 @@ router.post('/register', (req, res, next) => {
     }
     ///////////send evreything 
     if(errors.length > 0 ){
-        res.render('register', { firstName, lastName, address, phone, school, idNumber, errors});
+        res.render('register', { firstName, lastName, phone, idNumber, errors});
     }
     else{
         const fullname = firstName + ' ' + lastName;
@@ -49,10 +49,10 @@ router.post('/register', (req, res, next) => {
             if(user){
                 // user exist
                 errors.push({msg: 'کد ملی قبلا ثبت شده است.'});
-                res.render('register', { firstName, lastName, address, phone, school, idNumber, errors });
+                res.render('register', { firstName, lastName, phone, idNumber, errors });
             }
             else {
-                const newUser = new User({ipAddress, fullname, firstName, lastName, address, phone, school, idNumber, password, role, card});
+                const newUser = new User({ipAddress, fullname, firstName, lastName, phone, idNumber, password, role, card});
                 // Hash password
                 bcrypt.genSalt(10, (err, salt) => bcrypt.hash(newUser.password, salt, (err, hash) => {
                 if(err) throw err;
